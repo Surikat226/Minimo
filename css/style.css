@@ -1,0 +1,352 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Ubuntu:wght@300&display=swap");
+/*Обнуляющий стиль*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*===============================================*/
+/* Основные стили */
+body {
+  font-family: PlayfairDisplay;
+  font-size: 14px;
+  color: #626262;
+}
+
+a {
+  color: #626262;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* Указывает максимальную ширину контента, который может быть использован на странице */
+.content {
+  max-width: 1062px;
+  margin: 0 auto;
+  padding: 65px 15px 0;
+}
+
+/* Указывает максимальную ширину контента, который используется на странице чаще всего */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category {
+  font-family: Ubuntu;
+  line-height: 1.2;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #b4ad9e;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.text {
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* Прочие стили */
+/* Header */
+.header {
+  margin: 0 0 70px 0;
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: block;
+  font-family: Inconsolata;
+  font-size: 30px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #000000;
+  margin: 0 10px 0 0;
+  transition: 0.2s ease;
+}
+.header__logo:hover {
+  transform: translateX(5px) scale(1.1);
+}
+
+.header__links {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: 0 -100px 0 0;
+}
+.header__links a {
+  color: #626262;
+}
+.header__links li {
+  margin: 0 100px 0 0;
+  /* Ховерный after перестал дёргаться и отталкивать остальной контент */
+  position: relative;
+}
+.header__links li:after {
+  content: "";
+  /* Центрировал полоску по горизонтали */
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* Центрировал полоску по горизонтали */
+  display: block;
+  margin: 0 auto;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: width 0.1s ease;
+}
+.header__links li:hover:after {
+  width: 100%;
+}
+
+/* При сжатии окна располагает ссылки более компактно */
+@media screen and (max-width: 768px) {
+  .header__links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 0 15px;
+  }
+  .header__links li {
+    margin: 0 15px 0 0;
+  }
+}
+/* Основной контент */
+/* Intro */
+.intro {
+  margin: 0 0 132px 0;
+}
+
+.intro__image {
+  margin: 0 0 100px 0;
+}
+.intro__image img {
+  max-width: 100%;
+}
+
+.textblock-main__category {
+  margin: 0 0 26px 0;
+}
+
+.textblock-main__title {
+  margin: 0 0 32px 0;
+}
+
+.textblock-main__text {
+  margin: 0 0 50px 0;
+}
+
+/* Blocks-1 */
+.blocks-1 {
+  margin: 0 0 110px 0;
+}
+
+.blocks__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -60px -130px 0;
+}
+
+.blocks__column {
+  flex: 0 1 50%;
+  padding: 0 60px 0 0;
+  margin: 0 0 130px 0;
+}
+
+.blocks__image {
+  margin: 0 0 20px 0;
+}
+.blocks__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Если понадобится вставить картинку с другими пропорциями */
+}
+
+.blocks__category {
+  margin: 0 0 25px 0;
+}
+
+.blocks__title {
+  margin: 0 0 25px 0;
+}
+
+/* Newsletter block */
+.newsletter {
+  margin: 0 0 100px 0;
+  min-height: 287px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.newsletter__box {
+  min-height: 287px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter__sign {
+  margin: 0 0 60px 0;
+}
+
+.newsletter__enterform:after {
+  content: "";
+  display: block;
+  margin: 3px auto 0;
+  width: 340px;
+  height: 1px;
+  background-color: #000000;
+}
+.newsletter__enterform input {
+  width: 300px;
+  padding: 3px;
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .newsletter__enterform:after {
+    width: 240px;
+  }
+  .newsletter__enterform input {
+    width: 200px;
+  }
+}
+/* Blocks-2 */
+.blocks-2 {
+  margin: -65px 0 100px 0;
+}
+
+.blocks-2__loadmore {
+  text-align: center;
+  margin: 150px 0 0 0;
+}
+
+.btnlink {
+  font-size: 20px;
+  line-height: 24px;
+}
+.btnlink a {
+  border: 1px solid #626262;
+  padding: 15px 25px;
+  transition: 0.2s ease-out;
+}
+.btnlink a:hover {
+  background-color: #F5DEAD;
+}
+
+/* Footer */
+.footer {
+  height: 97px;
+  padding: 0 15px;
+  background-color: #f0f0f0;
+}
+
+.footer__row {
+  height: 97px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__item {
+  align-items: center;
+}
+.footer__item ul {
+  display: flex;
+  align-items: center;
+}
+.footer__item li {
+  margin: 0 15px 0 0;
+  transition: 0.3s ease;
+}
+.footer__item li:last-child {
+  margin: 0;
+}
+.footer__item li:hover {
+  padding: 5px;
+  box-shadow: 0 0 5px #000;
+}
